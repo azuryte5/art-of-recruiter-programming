@@ -1,0 +1,27 @@
+{
+  "name": "art-of-recruiter-programming",
+  "version": "1.0.0",
+  "description": "Week 10 Challenge  - Team Roster Generator # Table of Contents 1. [Links](#links) 1. [Usage](#usage) 1. [Tech used](#tech-used) 1. [Assignment Details](#assignment-details)     1. [User Story](#user-story)     1. [Acceptance Criteria](#acceptance-criteria) 1.  1. [Credits](#credits) ---- ## Links The URL of the GitHub repository:",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azuryte5/art-of-recruiter-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azuryte5/art-of-recruiter-programming/issues"
+  },
+  "homepage": "https://github.com/azuryte5/art-of-recruiter-programming#readme"
+}
