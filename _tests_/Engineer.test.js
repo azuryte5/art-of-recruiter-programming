@@ -7,4 +7,5 @@ test('creates an Engineer with github account', () => {
     expect(ensign.id).toEqual(expect.any(Number));
     expect(ensign.email).toEqual(expect.any(String));
     expect(ensign.github).toEqual(expect.any(String));
+    console.log(ensign);
   });

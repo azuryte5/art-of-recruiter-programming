@@ -1,3 +1,4 @@
+const { expect } = require('@jest/globals');
 const Manager = require('../lib/Manager.js')
 
 test('creates an manager object with office number', () => {
@@ -8,3 +9,9 @@ test('creates an manager object with office number', () => {
     expect(boss.email).toEqual(expect.any(String));
     expect(boss.officeNumber).toEqual(expect.any(Number));
   });
+
+test('Manager role is updated when getRole is called', () => {
+    const captain = new Manager ("Mal" , 2, "niceguy@browncoat.com");
+    captain.getRole()
+    expect(captain.role).toEqual("Manager")
+})
