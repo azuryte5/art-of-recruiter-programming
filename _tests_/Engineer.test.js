@@ -1,3 +1,4 @@
+const { expect } = require('@jest/globals');
 const Engineer = require('../lib/Engineer.js')
 
 test('creates an Engineer with github account', () => {
@@ -9,3 +10,9 @@ test('creates an Engineer with github account', () => {
     expect(ensign.github).toEqual(expect.any(String));
     console.log(ensign);
   });
+
+  test('Engineer role is updated correctly' ,() =>{
+    const ensign = new Engineer ("Geordi Laforge", 5, "exactly@startrek.com", "readingrainbow");
+    ensign.getRole()
+    expect(ensign.role).toEqual("Engineer")
+  } )
