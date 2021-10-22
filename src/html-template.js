@@ -36,7 +36,7 @@ module.exports = askManagerData => {
                 </p>
                 <p class="subtitle">
                     Role: ${askManagerData.role}
-                    Manager Id: ${askManagerData.id}
+                    Id: ${askManagerData.id}
 
                 </p>
             </div>
