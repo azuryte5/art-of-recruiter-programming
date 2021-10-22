@@ -28,14 +28,14 @@ module.exports = askManagerData => {
 
     <main class="container my-5">
         <div class="columns is-multiline is-variable is-centered is-mobile is-7-desktop is-tablet is-fullhd">
-        <div class="column is-narow">
+        <div class="column is-narrow">
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
                     Name: ${askManagerData.name}
                 </p>
                 <p class="subtitle">
-                    Role: {Manager}
+                    Role: ${askManagerData.role}
                     Manager Id: ${askManagerData.id}
 
                 </p>
@@ -43,12 +43,12 @@ module.exports = askManagerData => {
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: ${askManagerData.office}
+                        Office Id: ${askManagerData.officeNumber}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="{email}">${askManagerData.email}</a>
+                        Contact: <a href="mailto: ${askManagerData.email}">${askManagerData.email}</a>
                     </span>
                 </p>
             </footer>
