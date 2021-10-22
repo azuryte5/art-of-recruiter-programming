@@ -1,4 +1,5 @@
-
+module.exports = askManagerData => {
+   return `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,23 +32,23 @@
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: Azuryte
+                    Name: ${askManagerData.name}
                 </p>
                 <p class="subtitle">
                     Role: {Manager}
-                    Manager Id: 1
+                    Manager Id: ${askManagerData.id}
 
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: 108
+                        Office Id: ${askManagerData.office}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="{email}">a@a.com</a>
+                        Contact: <a href="{email}">${askManagerData.email}</a>
                     </span>
                 </p>
             </footer>
@@ -169,3 +170,5 @@
 </body>
 
 </html>
+`   
+}

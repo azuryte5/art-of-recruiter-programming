@@ -1,5 +1,6 @@
-const inquirer = require('inquirer')
-const fs = require('fs')
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generatePage = require('./src/html-template');
 
 const askManager = () => {
     return inquirer
@@ -12,7 +13,7 @@ const askManager = () => {
         {
             type:"input",
             name:"id",
-            message: "What is the mangers Id number?"
+            message: "What is the manager's ID number?"
         },
         {  
             type:"input",
@@ -27,6 +28,12 @@ const askManager = () => {
 };
 
 askManager()
-    .then(data =>{
+    .then(data => {
+        const answers = generatePage(data);
         console.log(data)
+        fs.writeFile('./dist/index.html', answers, err=> {
+        if (err) throw new Error (err);
+
+        console.log("Success!")
+        })
     })
