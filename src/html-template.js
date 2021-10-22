@@ -1,4 +1,4 @@
-module.exports = askManagerData => {
+module.exports = teamRoster => {
    return `
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +15,13 @@ module.exports = askManagerData => {
 </head>
 
 <body>
-    <section class="hero is-info">
+    <section class="hero is-link">
         <div class="hero-body ">
             <p class="title">
-                Team Roster
+                Team Members
             </p>
             <p class="subtitle">
-                Quick Overview of team and contact information
+                Team contact information
             </p>
         </div>
     </section>
@@ -32,127 +32,127 @@ module.exports = askManagerData => {
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: ${askManagerData.name}
+                    ${teamRoster[0].name}
                 </p>
                 <p class="subtitle">
-                    Role: ${askManagerData.role}
-                    Id: ${askManagerData.id}
+                    Role: ${teamRoster[0].role} <br>
+                    ID: ${teamRoster[0].id}
 
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: ${askManagerData.officeNumber}
+                        Office Id: ${teamRoster[0].officeNumber}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="mailto: ${askManagerData.email}">${askManagerData.email}</a>
+                        Contact: <a href="mailto: ${teamRoster[0].email}">${teamRoster[0].email}</a>
                     </span>
                 </p>
             </footer>
         </div>
     </div>
-    <div class="column is-narow" >
+    <div class="column is-narrow" >
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: {Name}
+                    Name: ${teamRoster[1].name}
                 </p>
                 <p class="subtitle">
-                    Role: {Manager}
-                    Manager Id: {number}
+                    Role: ${teamRoster[1].role} <br>
+                    ID: ${teamRoster[1].id}
 
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: {OfficeNumber}
+                        Github: <a href="https://github.com/${teamRoster[1].getGithub()}>${teamRoster[1].getGithub()}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="{email}">{email}</a>
+                        Contact: <a href=" ${teamRoster[1].email}"> ${teamRoster[1].email}</a>
                     </span>
                 </p>
             </footer>
         </div>
     </div>
-    <div class="column is-narow" >
+    <div class="column is-narrow" >
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: {Name}
+                    Name: ${teamRoster[2].name}
                 </p>
                 <p class="subtitle">
-                    Role: {Manager}
-                    Manager Id: {number}
+                    Role: ${teamRoster[2].role}<br>
+                    ID: ${teamRoster[2].id}
 
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: {OfficeNumber}
+                    Github: <a href="https://github.com/${teamRoster[2].getGithub()}>${teamRoster[2].getGithub()}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="{email}">{email}</a>
+                        Contact: <a href=" ${teamRoster[2].email}"> ${teamRoster[2].email}</a>
                     </span>
                 </p>
             </footer>
         </div>
     </div>
-    <div class="column is-narow">
+    <div class="column is-narrow">
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: {Name}
+                    Name: ${teamRoster[3].name}
                 </p>
                 <p class="subtitle">
-                    Role: {Manager}
-                    Manager Id: {number}
+                    Role: ${teamRoster[3].role}<br>
+                    ID: ${teamRoster[3].id}
 
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: {OfficeNumber}
+                        School: ${teamRoster[3].school}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="{email}">{email}</a>
+                        Contact: <a href=" ${teamRoster[3].email}"> ${teamRoster[3].email}</a>
                     </span>
                 </p>
             </footer>
         </div>
     </div>
-    <div class="column is-narow">
+    <div class="column is-narrow">
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: {Name}
+                    Name: ${teamRoster[4].name}
                 </p>
                 <p class="subtitle">
-                    Role: {Manager}
-                    Manager Id: {number}
+                    Role: ${teamRoster[4].role}<br>
+                    ID: ${teamRoster[4].id}
 
                 </p>
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        Office Id: {OfficeNumber}
+                    School: ${teamRoster[4].school}
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Contact: <a href="{email}">{email}</a>
+                        Contact: <a href=" ${teamRoster[4].email}"> ${teamRoster[4].email}</a>
                     </span>
                 </p>
             </footer>
