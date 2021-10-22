@@ -16,7 +16,7 @@ module.exports = teamRoster => {
 
 <body>
     <section class="hero is-link">
-        <div class="hero-body ">
+        <div class="hero-body">
             <p class="title">
                 Team Members
             </p>
@@ -58,7 +58,7 @@ module.exports = teamRoster => {
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: ${teamRoster[1].name}
+                    ${teamRoster[1].name}
                 </p>
                 <p class="subtitle">
                     Role: ${teamRoster[1].role} <br>
@@ -68,13 +68,15 @@ module.exports = teamRoster => {
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
+                Github:    
                     <span>
-                        Github: <a href="https://github.com/${teamRoster[1].getGithub()}>${teamRoster[1].getGithub()}
+                         <a href="https://github.com/${teamRoster[1].getGithub()}">${teamRoster[1].getGithub()}
                     </span>
                 </p>
                 <p class="card-footer-item">
+                    Contact:     
                     <span>
-                        Contact: <a href=" ${teamRoster[1].email}"> ${teamRoster[1].email}</a>
+                        <a href="mailto: ${teamRoster[1].email}"> ${teamRoster[1].email}</a>
                     </span>
                 </p>
             </footer>
@@ -84,7 +86,7 @@ module.exports = teamRoster => {
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: ${teamRoster[2].name}
+                    ${teamRoster[2].name}
                 </p>
                 <p class="subtitle">
                     Role: ${teamRoster[2].role}<br>
@@ -94,13 +96,15 @@ module.exports = teamRoster => {
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
+                    Github:
                     <span>
-                    Github: <a href="https://github.com/${teamRoster[2].getGithub()}>${teamRoster[2].getGithub()}
+                    <a href="https://github.com/${teamRoster[2].getGithub()}">${teamRoster[2].getGithub()}
                     </span>
                 </p>
                 <p class="card-footer-item">
+                Contact:    
                     <span>
-                        Contact: <a href=" ${teamRoster[2].email}"> ${teamRoster[2].email}</a>
+                         <a href="mailto:  ${teamRoster[2].email}"> ${teamRoster[2].email}</a>
                     </span>
                 </p>
             </footer>
@@ -110,7 +114,7 @@ module.exports = teamRoster => {
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: ${teamRoster[3].name}
+                    ${teamRoster[3].name}
                 </p>
                 <p class="subtitle">
                     Role: ${teamRoster[3].role}<br>
@@ -120,13 +124,15 @@ module.exports = teamRoster => {
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
+                School:    
                     <span>
-                        School: ${teamRoster[3].school}
+                         ${teamRoster[3].school}
                     </span>
                 </p>
                 <p class="card-footer-item">
+                Contact:   
                     <span>
-                        Contact: <a href=" ${teamRoster[3].email}"> ${teamRoster[3].email}</a>
+                         <a href="mailto:  ${teamRoster[3].email}"> ${teamRoster[3].email}</a>
                     </span>
                 </p>
             </footer>
@@ -136,7 +142,7 @@ module.exports = teamRoster => {
         <div class="card is-variable">
             <div class="card-content">
                 <p class="title">
-                    Name: ${teamRoster[4].name}
+                    ${teamRoster[4].name}
                 </p>
                 <p class="subtitle">
                     Role: ${teamRoster[4].role}<br>
@@ -146,13 +152,15 @@ module.exports = teamRoster => {
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
+                School:    
                     <span>
-                    School: ${teamRoster[4].school}
+                     ${teamRoster[4].school}
                     </span>
                 </p>
                 <p class="card-footer-item">
+                Contact:    
                     <span>
-                        Contact: <a href=" ${teamRoster[4].email}"> ${teamRoster[4].email}</a>
+                         <a href="mailto: ${teamRoster[4].email}"> ${teamRoster[4].email}</a>
                     </span>
                 </p>
             </footer>
@@ -163,8 +171,9 @@ module.exports = teamRoster => {
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Team Roster</strong> by <a href="{email}">{Name}</a>
+                <strong>Team Roster</strong> by ${teamRoster[0]}</a>
             </p>
+            <span>${teamRoster[1]}${teamRoster[2]}${teamRoster[3]}${teamRoster[4]}</span>
         </div>
     </footer>
 </body>
