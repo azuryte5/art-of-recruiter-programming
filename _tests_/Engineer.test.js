@@ -11,8 +11,13 @@ test('creates an Engineer with github account', () => {
     console.log(ensign);
   });
 
-  test('Engineer role is updated correctly' ,() =>{
+test('Engineer role is updated correctly' ,() =>{
     const ensign = new Engineer ("Geordi Laforge", 5, "exactly@startrek.com", "readingrainbow");
     ensign.getRole()
     expect(ensign.role).toEqual("Engineer")
   } )
+test('Engineers get getGithub method', () =>{
+    const ensign = new Engineer ("Geordi Laforge", 5, "exactly@startrek.com", "readingrainbow")
+    expect(ensign.getGithub("coolGlasses")).toBe(ensign.github)
+    console.log(ensign)
+})
