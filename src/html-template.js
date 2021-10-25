@@ -39,7 +39,6 @@ const engineer =teamRoster.filter(function(member){
     if (member.role === "Engineer") {return true}
 });
 console.log(engineer)
-// const [second] = engineer
 const generateEngine = engineer =>{
 
 return `
@@ -78,6 +77,49 @@ return `
 .join('')}
 `;
 };
+
+const intern =teamRoster.filter(function(member){
+    if (member.role === "Intern") {return true}
+});
+console.log(intern)
+const generateIntern = intern =>{
+return `
+        ${intern.map(({name, id, email, role, school}) => {
+        return `
+<div class="column is-narrow">
+<div class="card is-variable">
+    <div class="card-content">
+        <p class="title">
+         ${name}
+        </p>
+        <p class="subtitle">
+            Role: ${role} <br>
+            ID: ${id}
+
+        </p>
+    </div>
+    <footer class="card-footer">
+                <p class="card-footer-item">
+                School:    
+                    <span>
+                         ${school}
+                    </span>
+                </p>
+                <p class="card-footer-item">
+                Contact:   
+                    <span>
+                         <a href="mailto:  ${email}"> ${email}</a>
+                    </span>
+                </p>
+    </footer>
+</div>
+</div>
+`;
+})
+.join('')}
+`;
+};
+
 return `
 <!DOCTYPE html>
 <html lang="en">
@@ -109,69 +151,12 @@ return `
         <div class="columns is-multiline is-variable is-centered is-mobile is-7-desktop is-tablet is-fullhd">
     ${generateMain(leader)}
     ${generateEngine(engineer)}    
-    
-    <div class="column is-narrow">
-        <div class="card is-variable">
-            <div class="card-content">
-                <p class="title">
-                    ${teamRoster[3].name}
-                </p>
-                <p class="subtitle">
-                    Role: ${teamRoster[3].role}<br>
-                    ID: ${teamRoster[3].id}
-
-                </p>
-            </div>
-            <footer class="card-footer">
-                <p class="card-footer-item">
-                School:    
-                    <span>
-                         ${teamRoster[3].school}
-                    </span>
-                </p>
-                <p class="card-footer-item">
-                Contact:   
-                    <span>
-                         <a href="mailto:  ${teamRoster[3].email}"> ${teamRoster[3].email}</a>
-                    </span>
-                </p>
-            </footer>
-        </div>
-    </div>
-    <div class="column is-narrow">
-        <div class="card is-variable">
-            <div class="card-content">
-                <p class="title">
-                    ${teamRoster[4].name}
-                </p>
-                <p class="subtitle">
-                    Role: ${teamRoster[4].role}<br>
-                    ID: ${teamRoster[4].id}
-
-                </p>
-            </div>
-            <footer class="card-footer">
-                <p class="card-footer-item">
-                School:    
-                    <span>
-                     ${teamRoster[4].school}
-                    </span>
-                </p>
-                <p class="card-footer-item">
-                Contact:    
-                    <span>
-                         <a href="mailto: ${teamRoster[4].email}"> ${teamRoster[4].email}</a>
-                    </span>
-                </p>
-            </footer>
-        </div>
-    </div>
-</div>
+    ${generateIntern(intern)}
     </main>
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Team Roster</strong> by ${teamRoster[0]}</a>
+                <strong>Team Roster</strong> by ${leader.name}</a>
             </p>            
            
         </div>
