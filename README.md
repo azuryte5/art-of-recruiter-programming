@@ -20,6 +20,63 @@ The link to the Screencastify video:
 
 -----
 ## Tech Used 
+// This is engineer presentation code.
+ <div class="column is-narrow" >
+        <div class="card is-variable">
+            <div class="card-content">
+                <p class="title">
+                    ${teamRoster[1].name}
+                </p>
+                <p class="subtitle">
+                    Role: ${teamRoster[1].role} <br>
+                    ID: ${teamRoster[1].id}
+
+                </p>
+            </div>
+            <footer class="card-footer">
+                <p class="card-footer-item">
+                Github:    
+                    <span>
+                         <a href="https://github.com/${teamRoster[1].getGithub()}">${teamRoster[1].getGithub()}
+                    </span>
+                </p>
+                <p class="card-footer-item">
+                    Contact:     
+                    <span>
+                        <a href="mailto: ${teamRoster[1].email}"> ${teamRoster[1].email}</a>
+                    </span>
+                </p>
+            </footer>
+        </div>
+    </div>
+    <div class="column is-narrow" >
+        <div class="card is-variable">
+            <div class="card-content">
+                <p class="title">
+                    ${teamRoster[2].name}
+                </p>
+                <p class="subtitle">
+                    Role: ${teamRoster[2].role}<br>
+                    ID: ${teamRoster[2].id}
+
+                </p>
+            </div>
+            <footer class="card-footer">
+                <p class="card-footer-item">
+                    Github:
+                    <span>
+                    <a href="https://github.com/${teamRoster[2].getGithub()}">${teamRoster[2].getGithub()}
+                    </span>
+                </p>
+                <p class="card-footer-item">
+                Contact:    
+                    <span>
+                         <a href="mailto:  ${teamRoster[2].email}"> ${teamRoster[2].email}</a>
+                    </span>
+                </p>
+            </footer>
+        </div>
+    </div>
 
 
 -----

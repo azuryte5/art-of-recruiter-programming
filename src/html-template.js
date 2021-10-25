@@ -1,5 +1,84 @@
 module.exports = teamRoster => {
-   return `
+const main = teamRoster.filter(function(member){
+    if (member.role === "Manager") {return true}
+    });
+    console.log(main)
+    const [leader] = main;
+
+const generateMain=leader => {    
+const {name, id, email, role, officeNumber} =leader
+return `<div class="column is-narrow">
+<div class="card is-variable">
+    <div class="card-content">
+        <p class="title">
+        ${name}
+        </p>
+        <p class="subtitle">
+            Role: ${role} <br>
+            ID: ${id}
+
+        </p>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">
+            <span>
+                Office Id: ${officeNumber}
+            </span>
+        </p>
+        <p class="card-footer-item">
+            <span>
+                Contact: <a href="mailto: ${email}">${email}</a>
+            </span>
+        </p>
+    </footer>
+</div>
+</div>`
+}
+
+const engineer =teamRoster.filter(function(member){
+    if (member.role === "Engineer") {return true}
+});
+console.log(engineer)
+// const [second] = engineer
+const generateEngine = engineer =>{
+
+return `
+        ${engineer.map(({name, id, email, role, github}) => {
+        return `
+<div class="column is-narrow">
+<div class="card is-variable">
+    <div class="card-content">
+        <p class="title">
+         ${name}
+        </p>
+        <p class="subtitle">
+            Role: ${role} <br>
+            ID: ${id}
+
+        </p>
+    </div>
+    <footer class="card-footer">
+    <p class="card-footer-item">
+    Github:    
+        <span>
+             <a href="https://github.com/${github}">${github}</a>
+        </span>
+    </p>
+    <p class="card-footer-item">
+        Contact:     
+        <span>
+            <a href="mailto: ${email}"> ${email}</a>
+        </span>
+    </p>
+</footer>
+</div>
+</div>
+`;
+})
+.join('')}
+`;
+};
+return `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,88 +107,9 @@ module.exports = teamRoster => {
 
     <main class="container my-5">
         <div class="columns is-multiline is-variable is-centered is-mobile is-7-desktop is-tablet is-fullhd">
-        <div class="column is-narrow">
-        <div class="card is-variable">
-            <div class="card-content">
-                <p class="title">
-                    ${teamRoster[0].name}
-                </p>
-                <p class="subtitle">
-                    Role: ${teamRoster[0].role} <br>
-                    ID: ${teamRoster[0].id}
-
-                </p>
-            </div>
-            <footer class="card-footer">
-                <p class="card-footer-item">
-                    <span>
-                        Office Id: ${teamRoster[0].officeNumber}
-                    </span>
-                </p>
-                <p class="card-footer-item">
-                    <span>
-                        Contact: <a href="mailto: ${teamRoster[0].email}">${teamRoster[0].email}</a>
-                    </span>
-                </p>
-            </footer>
-        </div>
-    </div>
-    <div class="column is-narrow" >
-        <div class="card is-variable">
-            <div class="card-content">
-                <p class="title">
-                    ${teamRoster[1].name}
-                </p>
-                <p class="subtitle">
-                    Role: ${teamRoster[1].role} <br>
-                    ID: ${teamRoster[1].id}
-
-                </p>
-            </div>
-            <footer class="card-footer">
-                <p class="card-footer-item">
-                Github:    
-                    <span>
-                         <a href="https://github.com/${teamRoster[1].getGithub()}">${teamRoster[1].getGithub()}
-                    </span>
-                </p>
-                <p class="card-footer-item">
-                    Contact:     
-                    <span>
-                        <a href="mailto: ${teamRoster[1].email}"> ${teamRoster[1].email}</a>
-                    </span>
-                </p>
-            </footer>
-        </div>
-    </div>
-    <div class="column is-narrow" >
-        <div class="card is-variable">
-            <div class="card-content">
-                <p class="title">
-                    ${teamRoster[2].name}
-                </p>
-                <p class="subtitle">
-                    Role: ${teamRoster[2].role}<br>
-                    ID: ${teamRoster[2].id}
-
-                </p>
-            </div>
-            <footer class="card-footer">
-                <p class="card-footer-item">
-                    Github:
-                    <span>
-                    <a href="https://github.com/${teamRoster[2].getGithub()}">${teamRoster[2].getGithub()}
-                    </span>
-                </p>
-                <p class="card-footer-item">
-                Contact:    
-                    <span>
-                         <a href="mailto:  ${teamRoster[2].email}"> ${teamRoster[2].email}</a>
-                    </span>
-                </p>
-            </footer>
-        </div>
-    </div>
+    ${generateMain(leader)}
+    ${generateEngine(engineer)}    
+    
     <div class="column is-narrow">
         <div class="card is-variable">
             <div class="card-content">
@@ -172,8 +172,8 @@ module.exports = teamRoster => {
         <div class="content has-text-centered">
             <p>
                 <strong>Team Roster</strong> by ${teamRoster[0]}</a>
-            </p>
-            <span>${teamRoster[1]}${teamRoster[2]}${teamRoster[3]}${teamRoster[4]}</span>
+            </p>            
+           
         </div>
     </footer>
 </body>

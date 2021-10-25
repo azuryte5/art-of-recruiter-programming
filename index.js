@@ -8,6 +8,7 @@ const { validate } = require('@babel/types');
 
 let roster = []
 
+
 const askManager = () => {
         return inquirer
     .prompt([
@@ -45,7 +46,7 @@ const askManager = () => {
         const manager = new Manager(member.name, member.id, member.email, member.office)
         manager.getRole()
         roster.push(manager);
-        console.log(roster)
+        // console.log(roster)
         askNextMember()
     })
 };
@@ -114,7 +115,7 @@ const askEngineer = () => {
         const engineer = new Engineer (member.name, member.id, member.email, member.github);
         engineer.getRole();
         roster.push(engineer);
-        console.log(roster)
+        // console.log(roster)
         askNextMember();
     })
 }
@@ -151,7 +152,7 @@ const askIntern = () => {
         const intern = new Intern (member.name, member.id, member.email, member.school);
         intern.getRole();
         roster.push(intern);
-        console.log(roster)
+        // console.log(roster)
         askNextMember();
 })}
 askManager()
