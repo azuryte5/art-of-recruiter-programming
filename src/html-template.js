@@ -1,13 +1,16 @@
-module.exports = teamRoster => {
-const main = teamRoster.filter(function(member){
-    if (member.role === "Manager") {return true}
-    });
-    console.log(main)
-    const [leader] = main;
+module.exports = (teamRoster) => {
+// Find Manager Object in teamRoster array 
+const main = teamRoster.filter(function (member) {
+    if (member.role === "Manager") {
+      return true;
+    };
+  });
+  console.log(main);
+  const [leader] = main;
 
-const generateMain=leader => {    
-const {name, id, email, role, officeNumber} =leader
-return `<div class="column is-narrow">
+const generateMain = (leader) => {
+    const { name, id, email, role, officeNumber } = leader;
+    return `<div class="column is-narrow">
 <div class="card is-variable">
     <div class="card-content">
         <p class="title">
@@ -32,18 +35,23 @@ return `<div class="column is-narrow">
         </p>
     </footer>
 </div>
-</div>`
-}
+</div>
+`;
+};
 
-const engineer =teamRoster.filter(function(member){
-    if (member.role === "Engineer") {return true}
-});
-console.log(engineer)
-const generateEngine = engineer =>{
-
+// Find engineers in teamRoster array of objects
+const engineer = teamRoster.filter(function (member) {
+    if (member.role === "Engineer") {
+      return true;
+    }
+  });
+  console.log(engineer);
+  const generateEngine = (engineer) => {
+    //map for each engineer found
+    return `
+        ${engineer    
+        .map(({ name, id, email, role, github }) => {
 return `
-        ${engineer.map(({name, id, email, role, github}) => {
-        return `
 <div class="column is-narrow">
 <div class="card is-variable">
     <div class="card-content">
@@ -58,13 +66,13 @@ return `
     </div>
     <footer class="card-footer">
     <p class="card-footer-item">
-    Github:    
+    Github:     
         <span>
              <a href="https://github.com/${github}">${github}</a>
         </span>
     </p>
     <p class="card-footer-item">
-        Contact:     
+        Contact:      
         <span>
             <a href="mailto: ${email}"> ${email}</a>
         </span>
@@ -74,18 +82,21 @@ return `
 </div>
 `;
 })
-.join('')}
+.join("")}
 `;
-};
-
-const intern =teamRoster.filter(function(member){
-    if (member.role === "Intern") {return true}
-});
-console.log(intern)
-const generateIntern = intern =>{
-return `
-        ${intern.map(({name, id, email, role, school}) => {
-        return `
+  };
+// find all objects named Interns' in teamroster array
+const intern = teamRoster.filter(function (member) {
+    if (member.role === "Intern") {
+    return true;
+    }
+  });
+  console.log(intern);
+  const generateIntern = (intern) => {
+    return `
+        ${intern
+          .map(({ name, id, email, role, school }) => {
+            return `
 <div class="column is-narrow">
 <div class="card is-variable">
     <div class="card-content">
@@ -99,28 +110,28 @@ return `
         </p>
     </div>
     <footer class="card-footer">
-                <p class="card-footer-item">
-                School:    
-                    <span>
-                         ${school}
-                    </span>
-                </p>
-                <p class="card-footer-item">
-                Contact:   
-                    <span>
-                         <a href="mailto:  ${email}"> ${email}</a>
-                    </span>
-                </p>
+        <p class="card-footer-item">
+            School:     
+                <span>
+                 ${school}
+                </span>
+        </p>
+        <p class="card-footer-item">
+            Contact:   
+                <span>
+                <a href="mailto:  ${email}"> ${email}</a>
+                </span>
+        </p>
     </footer>
 </div>
 </div>
 `;
 })
-.join('')}
+.join("")}
 `;
-};
+  };
 
-return `
+  return `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -129,8 +140,6 @@ return `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My team Roster</title>
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -139,10 +148,10 @@ return `
     <section class="hero is-link">
         <div class="hero-body">
             <p class="title">
-                Team Members
+            Team Members
             </p>
             <p class="subtitle">
-                Team contact information
+            Team contact information
             </p>
         </div>
     </section>
@@ -156,13 +165,11 @@ return `
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Team Roster</strong> by ${leader.name}</a>
+            <strong>Team Roster</strong> by ${leader.name}</a>
             </p>            
-           
         </div>
     </footer>
 </body>
-
 </html>
-`   
-}
+`;
+};
