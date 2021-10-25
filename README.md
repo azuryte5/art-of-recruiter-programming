@@ -17,15 +17,21 @@ The link to the Screencastify video:
 
 -----
 ## Usage
-
+Function of the is application is to have a manager run the command line and input the data of themselves and their team.
 -----
 ## Tech Used 
+
 - Node js
 - Jest
 - Inquirer
+- Bulma for html styling
 
 -----
 ## Assignment Details
+
+- Tests all pass
+- Didn't need to use a css as html page has Bulma instead.
+- Validation commands added to inquirer questions.
 
 ### User Story
 

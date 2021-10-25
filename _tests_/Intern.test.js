@@ -16,3 +16,8 @@ test('creates an intern with a school', () => {
     padawan.getRole()
     expect(padawan.role).toEqual("Intern")
   } )
+
+  test('Intern getSchool method', () =>{
+    const padawan = new Intern ("Luke Skywalker", 1, "chosenOne@lightside.com", "Jedi Academy");
+    expect(padawan.getSchool()).toBe(padawan.school);
+  });

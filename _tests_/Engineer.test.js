@@ -8,16 +8,14 @@ test('creates an Engineer with github account', () => {
     expect(ensign.id).toEqual(expect.any(Number));
     expect(ensign.email).toEqual(expect.any(String));
     expect(ensign.github).toEqual(expect.any(String));
-    console.log(ensign);
   });
 
 test('Engineer role is updated correctly' ,() =>{
     const ensign = new Engineer ("Geordi Laforge", 5, "exactly@startrek.com", "readingrainbow");
-    ensign.getRole()
-    expect(ensign.role).toEqual("Engineer")
-  } )
+    ensign.getRole();
+    expect(ensign.role).toEqual("Engineer");
+  });
 test('Engineers get getGithub method', () =>{
     const ensign = new Engineer ("Geordi Laforge", 5, "exactly@startrek.com", "readingrainbow")
-    expect(ensign.getGithub("coolGlasses")).toBe(ensign.github)
-    console.log(ensign)
-})
+    expect(ensign.getGithub("coolGlasses")).toBe(ensign.github);
+});
