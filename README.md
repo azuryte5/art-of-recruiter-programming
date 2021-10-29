@@ -20,6 +20,7 @@ The link to the Screencastify video: https://watch.screencastify.com/v/YOPYRYz2g
 Function of the is application is to have a manager run the command line and input the data of themselves and their team.
 
 <img alt="code made for team roster assignment" src="src/oop-week10.png">
+
 -----
 ## Tech Used 
 
