@@ -5,6 +5,7 @@ const main = teamRoster.filter(function (member) {
       return true;
     };
   });
+  
   console.log(main);
   const [leader] = main;
 

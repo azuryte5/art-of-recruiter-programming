@@ -13,11 +13,13 @@ Week 10 Challenge  - Team Roster Generator
 ## Links
 The URL of the GitHub repository: https://github.com/azuryte5/art-of-recruiter-programming
 
-The link to the Screencastify video:
+The link to the Screencastify video: https://watch.screencastify.com/v/YOPYRYz2gPMBQIwlur3i
 
 -----
 ## Usage
 Function of the is application is to have a manager run the command line and input the data of themselves and their team.
+
+<img alt="code made for team roster assignment" src="src/oop-week10.png">
 -----
 ## Tech Used 
 
